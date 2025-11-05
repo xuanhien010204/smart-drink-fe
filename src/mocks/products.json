@@ -1,0 +1,613 @@
+[
+    {
+        "product_id": "p-espresso",
+        "category_id": "c1",
+        "name": "Espresso",
+        "base_price": 20000,
+        "image_url": "https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?w=600",
+        "is_available": true,
+        "calories": 5,
+        "preparation_time": 60,
+        "tags": [
+            "hot",
+            "strong"
+        ],
+        "ingredients": {
+            "coffee": "20g"
+        },
+        "variants": [
+            {
+                "variant_id": "v-s",
+                "variant_name": "S",
+                "variant_type": "SIZE",
+                "price_adjustment": 0
+            },
+            {
+                "variant_id": "v-m",
+                "variant_name": "M",
+                "variant_type": "SIZE",
+                "price_adjustment": 5000
+            },
+            {
+                "variant_id": "v-l",
+                "variant_name": "L",
+                "variant_type": "SIZE",
+                "price_adjustment": 10000
+            }
+        ]
+    },
+    {
+        "product_id": "p-cappuccino",
+        "category_id": "c1",
+        "name": "Cappuccino",
+        "base_price": 35000,
+        "image_url": "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=600",
+        "is_available": true,
+        "calories": 120,
+        "preparation_time": 90,
+        "tags": [
+            "hot",
+            "creamy"
+        ],
+        "variants": [
+            {
+                "variant_id": "v-s",
+                "variant_name": "S",
+                "variant_type": "SIZE",
+                "price_adjustment": 0
+            },
+            {
+                "variant_id": "v-m",
+                "variant_name": "M",
+                "variant_type": "SIZE",
+                "price_adjustment": 5000
+            }
+        ]
+    },
+    {
+        "product_id": "p-latte",
+        "category_id": "c1",
+        "name": "Caffe Latte",
+        "base_price": 38000,
+        "image_url": "https://images.unsplash.com/photo-1561882468-9110e03e0f78?w=600",
+        "is_available": true,
+        "calories": 150,
+        "preparation_time": 90,
+        "tags": [
+            "hot",
+            "mild"
+        ],
+        "variants": [
+            {
+                "variant_id": "v-s",
+                "variant_name": "S",
+                "variant_type": "SIZE",
+                "price_adjustment": 0
+            },
+            {
+                "variant_id": "v-m",
+                "variant_name": "M",
+                "variant_type": "SIZE",
+                "price_adjustment": 5000
+            },
+            {
+                "variant_id": "v-l",
+                "variant_name": "L",
+                "variant_type": "SIZE",
+                "price_adjustment": 10000
+            }
+        ]
+    },
+    {
+        "product_id": "p-americano",
+        "category_id": "c1",
+        "name": "Americano",
+        "base_price": 25000,
+        "image_url": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=600",
+        "is_available": true,
+        "calories": 10,
+        "preparation_time": 60,
+        "tags": [
+            "hot",
+            "cold"
+        ],
+        "variants": [
+            {
+                "variant_id": "v-s",
+                "variant_name": "S",
+                "variant_type": "SIZE",
+                "price_adjustment": 0
+            },
+            {
+                "variant_id": "v-m",
+                "variant_name": "M",
+                "variant_type": "SIZE",
+                "price_adjustment": 5000
+            },
+            {
+                "variant_id": "v-ice-none",
+                "variant_name": "Hot",
+                "variant_type": "ICE",
+                "price_adjustment": 0
+            },
+            {
+                "variant_id": "v-ice-normal",
+                "variant_name": "Iced",
+                "variant_type": "ICE",
+                "price_adjustment": 0
+            }
+        ]
+    },
+    {
+        "product_id": "p-mocha",
+        "category_id": "c1",
+        "name": "Mocha",
+        "base_price": 42000,
+        "image_url": "https://images.unsplash.com/photo-1578314675249-a6910f80cc4e?w=600",
+        "is_available": true,
+        "calories": 180,
+        "preparation_time": 120,
+        "tags": [
+            "hot",
+            "sweet",
+            "chocolate"
+        ],
+        "variants": [
+            {
+                "variant_id": "v-m",
+                "variant_name": "M",
+                "variant_type": "SIZE",
+                "price_adjustment": 0
+            },
+            {
+                "variant_id": "v-l",
+                "variant_name": "L",
+                "variant_type": "SIZE",
+                "price_adjustment": 10000
+            }
+        ]
+    },
+    {
+        "product_id": "p-milk-tea",
+        "category_id": "c2",
+        "name": "Classic Milk Tea",
+        "base_price": 30000,
+        "image_url": "https://images.unsplash.com/photo-1558857563-8673e8b2a9ea?w=600",
+        "is_available": true,
+        "calories": 150,
+        "tags": [
+            "cold",
+            "sweet"
+        ],
+        "preparation_time": 90,
+        "variants": [
+            {
+                "variant_id": "v-s",
+                "variant_name": "S",
+                "variant_type": "SIZE",
+                "price_adjustment": 0
+            },
+            {
+                "variant_id": "v-m",
+                "variant_name": "M",
+                "variant_type": "SIZE",
+                "price_adjustment": 5000
+            },
+            {
+                "variant_id": "v-l",
+                "variant_name": "L",
+                "variant_type": "SIZE",
+                "price_adjustment": 10000
+            },
+            {
+                "variant_id": "v-ice-none",
+                "variant_name": "No Ice",
+                "variant_type": "ICE",
+                "price_adjustment": 0
+            },
+            {
+                "variant_id": "v-ice-normal",
+                "variant_name": "Normal Ice",
+                "variant_type": "ICE",
+                "price_adjustment": 0
+            },
+            {
+                "variant_id": "v-sugar-50",
+                "variant_name": "50% Sugar",
+                "variant_type": "SUGAR",
+                "price_adjustment": 0
+            },
+            {
+                "variant_id": "v-sugar-100",
+                "variant_name": "100% Sugar",
+                "variant_type": "SUGAR",
+                "price_adjustment": 0
+            }
+        ]
+    },
+    {
+        "product_id": "p-green-tea",
+        "category_id": "c2",
+        "name": "Green Tea Latte",
+        "base_price": 28000,
+        "image_url": "https://images.unsplash.com/photo-1515823064-d6e0c04616a7?w=600",
+        "is_available": true,
+        "calories": 80,
+        "preparation_time": 60,
+        "tags": [
+            "hot",
+            "cold",
+            "healthy"
+        ],
+        "variants": [
+            {
+                "variant_id": "v-s",
+                "variant_name": "S",
+                "variant_type": "SIZE",
+                "price_adjustment": 0
+            },
+            {
+                "variant_id": "v-m",
+                "variant_name": "M",
+                "variant_type": "SIZE",
+                "price_adjustment": 5000
+            }
+        ]
+    },
+    {
+        "product_id": "p-thai-tea",
+        "category_id": "c2",
+        "name": "Thai Tea",
+        "base_price": 32000,
+        "image_url": "https://images.unsplash.com/photo-1576092768239-7a091ce6f86d?w=600",
+        "is_available": true,
+        "calories": 170,
+        "preparation_time": 90,
+        "tags": [
+            "cold",
+            "sweet",
+            "creamy"
+        ],
+        "variants": [
+            {
+                "variant_id": "v-m",
+                "variant_name": "M",
+                "variant_type": "SIZE",
+                "price_adjustment": 0
+            },
+            {
+                "variant_id": "v-l",
+                "variant_name": "L",
+                "variant_type": "SIZE",
+                "price_adjustment": 10000
+            }
+        ]
+    },
+    {
+        "product_id": "p-jasmine-tea",
+        "category_id": "c2",
+        "name": "Jasmine Tea",
+        "base_price": 22000,
+        "image_url": "https://images.unsplash.com/photo-1597318281667-2f673a61f1ff?w=600",
+        "is_available": true,
+        "calories": 0,
+        "preparation_time": 60,
+        "tags": [
+            "hot",
+            "cold",
+            "healthy",
+            "aromatic"
+        ],
+        "variants": []
+    },
+    {
+        "product_id": "p-mango-smoothie",
+        "category_id": "c3",
+        "name": "Mango Smoothie",
+        "base_price": 40000,
+        "image_url": "https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=600",
+        "is_available": true,
+        "calories": 180,
+        "preparation_time": 120,
+        "tags": [
+            "cold",
+            "sweet",
+            "fruity"
+        ],
+        "variants": [
+            {
+                "variant_id": "v-m",
+                "variant_name": "M",
+                "variant_type": "SIZE",
+                "price_adjustment": 0
+            },
+            {
+                "variant_id": "v-l",
+                "variant_name": "L",
+                "variant_type": "SIZE",
+                "price_adjustment": 10000
+            }
+        ]
+    },
+    {
+        "product_id": "p-strawberry-smoothie",
+        "category_id": "c3",
+        "name": "Strawberry Smoothie",
+        "base_price": 42000,
+        "image_url": "https://images.unsplash.com/photo-1505252585461-04db1eb84625?w=600",
+        "is_available": true,
+        "calories": 190,
+        "preparation_time": 120,
+        "tags": [
+            "cold",
+            "sweet",
+            "fruity"
+        ],
+        "variants": [
+            {
+                "variant_id": "v-m",
+                "variant_name": "M",
+                "variant_type": "SIZE",
+                "price_adjustment": 0
+            },
+            {
+                "variant_id": "v-l",
+                "variant_name": "L",
+                "variant_type": "SIZE",
+                "price_adjustment": 10000
+            }
+        ]
+    },
+    {
+        "product_id": "p-avocado-smoothie",
+        "category_id": "c3",
+        "name": "Avocado Smoothie",
+        "base_price": 45000,
+        "image_url": "https://images.unsplash.com/photo-1623065422902-30a2d299bbe4?w=600",
+        "is_available": true,
+        "calories": 220,
+        "preparation_time": 120,
+        "tags": [
+            "cold",
+            "creamy",
+            "healthy"
+        ],
+        "variants": [
+            {
+                "variant_id": "v-m",
+                "variant_name": "M",
+                "variant_type": "SIZE",
+                "price_adjustment": 0
+            },
+            {
+                "variant_id": "v-l",
+                "variant_name": "L",
+                "variant_type": "SIZE",
+                "price_adjustment": 10000
+            }
+        ]
+    },
+    {
+        "product_id": "p-orange-juice",
+        "category_id": "c4",
+        "name": "Fresh Orange Juice",
+        "base_price": 35000,
+        "image_url": "https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=600",
+        "is_available": true,
+        "calories": 110,
+        "preparation_time": 90,
+        "tags": [
+            "cold",
+            "fresh",
+            "vitamin"
+        ],
+        "variants": [
+            {
+                "variant_id": "v-m",
+                "variant_name": "M",
+                "variant_type": "SIZE",
+                "price_adjustment": 0
+            },
+            {
+                "variant_id": "v-l",
+                "variant_name": "L",
+                "variant_type": "SIZE",
+                "price_adjustment": 8000
+            }
+        ]
+    },
+    {
+        "product_id": "p-watermelon-juice",
+        "category_id": "c4",
+        "name": "Watermelon Juice",
+        "base_price": 32000,
+        "image_url": "https://images.unsplash.com/photo-1587049352846-4a222e784343?w=600",
+        "is_available": true,
+        "calories": 90,
+        "preparation_time": 90,
+        "tags": [
+            "cold",
+            "fresh",
+            "refreshing"
+        ],
+        "variants": [
+            {
+                "variant_id": "v-m",
+                "variant_name": "M",
+                "variant_type": "SIZE",
+                "price_adjustment": 0
+            },
+            {
+                "variant_id": "v-l",
+                "variant_name": "L",
+                "variant_type": "SIZE",
+                "price_adjustment": 8000
+            }
+        ]
+    },
+    {
+        "product_id": "p-passion-fruit-juice",
+        "category_id": "c4",
+        "name": "Passion Fruit Juice",
+        "base_price": 33000,
+        "image_url": "https://images.unsplash.com/photo-1622597467836-f3c7e8e48a2f?w=600",
+        "is_available": true,
+        "calories": 100,
+        "preparation_time": 90,
+        "tags": [
+            "cold",
+            "tangy",
+            "tropical"
+        ],
+        "variants": [
+            {
+                "variant_id": "v-m",
+                "variant_name": "M",
+                "variant_type": "SIZE",
+                "price_adjustment": 0
+            }
+        ]
+    },
+    {
+        "product_id": "p-matcha-latte",
+        "category_id": "c5",
+        "name": "Matcha Latte",
+        "base_price": 48000,
+        "image_url": "https://images.unsplash.com/photo-1536013690193-f7e1b2f8e6b7?w=600",
+        "is_available": true,
+        "calories": 140,
+        "preparation_time": 120,
+        "tags": [
+            "hot",
+            "cold",
+            "premium",
+            "healthy"
+        ],
+        "variants": [
+            {
+                "variant_id": "v-m",
+                "variant_name": "M",
+                "variant_type": "SIZE",
+                "price_adjustment": 0
+            },
+            {
+                "variant_id": "v-l",
+                "variant_name": "L",
+                "variant_type": "SIZE",
+                "price_adjustment": 10000
+            },
+            {
+                "variant_id": "v-ice-none",
+                "variant_name": "Hot",
+                "variant_type": "ICE",
+                "price_adjustment": 0
+            },
+            {
+                "variant_id": "v-ice-normal",
+                "variant_name": "Iced",
+                "variant_type": "ICE",
+                "price_adjustment": 0
+            }
+        ]
+    },
+    {
+        "product_id": "p-bubble-tea",
+        "category_id": "c5",
+        "name": "Brown Sugar Bubble Tea",
+        "base_price": 45000,
+        "image_url": "https://images.unsplash.com/photo-1525385133512-2f3bdd039054?w=600",
+        "is_available": true,
+        "calories": 250,
+        "preparation_time": 150,
+        "tags": [
+            "cold",
+            "sweet",
+            "trending"
+        ],
+        "variants": [
+            {
+                "variant_id": "v-m",
+                "variant_name": "M",
+                "variant_type": "SIZE",
+                "price_adjustment": 0
+            },
+            {
+                "variant_id": "v-l",
+                "variant_name": "L",
+                "variant_type": "SIZE",
+                "price_adjustment": 12000
+            },
+            {
+                "variant_id": "v-sugar-50",
+                "variant_name": "50% Sugar",
+                "variant_type": "SUGAR",
+                "price_adjustment": 0
+            },
+            {
+                "variant_id": "v-sugar-100",
+                "variant_name": "100% Sugar",
+                "variant_type": "SUGAR",
+                "price_adjustment": 0
+            }
+        ]
+    },
+    {
+        "product_id": "p-vietnamese-coffee",
+        "category_id": "c5",
+        "name": "Vietnamese Coffee",
+        "base_price": 35000,
+        "image_url": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600",
+        "is_available": true,
+        "calories": 130,
+        "preparation_time": 180,
+        "tags": [
+            "hot",
+            "cold",
+            "traditional",
+            "strong"
+        ],
+        "variants": [
+            {
+                "variant_id": "v-ice-none",
+                "variant_name": "Hot",
+                "variant_type": "ICE",
+                "price_adjustment": 0
+            },
+            {
+                "variant_id": "v-ice-normal",
+                "variant_name": "Iced",
+                "variant_type": "ICE",
+                "price_adjustment": 0
+            }
+        ]
+    },
+    {
+        "product_id": "p-taro-milk-tea",
+        "category_id": "c5",
+        "name": "Taro Milk Tea",
+        "base_price": 38000,
+        "image_url": "https://images.unsplash.com/photo-1558857563-8673e8b2a9ea?w=600",
+        "is_available": false,
+        "calories": 200,
+        "preparation_time": 120,
+        "tags": [
+            "cold",
+            "sweet",
+            "popular"
+        ],
+        "variants": [
+            {
+                "variant_id": "v-m",
+                "variant_name": "M",
+                "variant_type": "SIZE",
+                "price_adjustment": 0
+            },
+            {
+                "variant_id": "v-l",
+                "variant_name": "L",
+                "variant_type": "SIZE",
+                "price_adjustment": 10000
+            }
+        ]
+    }
+]

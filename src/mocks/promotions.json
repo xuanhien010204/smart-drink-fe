@@ -1,0 +1,56 @@
+[
+    {
+        "promotion_id": "promo-10",
+        "code": "WELCOME10",
+        "promotion_type": "PERCENTAGE",
+        "discount_value": 10,
+        "start_date": "2025-01-01T00:00:00Z",
+        "end_date": "2026-01-01T00:00:00Z",
+        "is_active": true
+    },
+    {
+        "promotion_id": "promo-20k",
+        "code": "SAVE20K",
+        "promotion_type": "FIXED",
+        "discount_value": 20000,
+        "start_date": "2025-01-01T00:00:00Z",
+        "end_date": "2026-01-01T00:00:00Z",
+        "is_active": true
+    },
+    {
+        "promotion_id": "promo-15",
+        "code": "STUDENT15",
+        "promotion_type": "PERCENTAGE",
+        "discount_value": 15,
+        "start_date": "2025-01-01T00:00:00Z",
+        "end_date": "2026-12-31T00:00:00Z",
+        "is_active": true
+    },
+    {
+        "promotion_id": "promo-30k",
+        "code": "FLASH30K",
+        "promotion_type": "FIXED",
+        "discount_value": 30000,
+        "start_date": "2025-11-01T00:00:00Z",
+        "end_date": "2025-11-30T00:00:00Z",
+        "is_active": true
+    },
+    {
+        "promotion_id": "promo-20",
+        "code": "WEEKEND20",
+        "promotion_type": "PERCENTAGE",
+        "discount_value": 20,
+        "start_date": "2025-11-01T00:00:00Z",
+        "end_date": "2025-12-31T00:00:00Z",
+        "is_active": true
+    },
+    {
+        "promotion_id": "promo-50k",
+        "code": "NEWUSER50K",
+        "promotion_type": "FIXED",
+        "discount_value": 50000,
+        "start_date": "2025-01-01T00:00:00Z",
+        "end_date": "2026-01-01T00:00:00Z",
+        "is_active": false
+    }
+]

@@ -1,0 +1,47 @@
+[
+    {
+        "order_id": "o-001",
+        "order_code": "SD-2025001",
+        "customer_id": "u-demo-1",
+        "order_status": "COMPLETED",
+        "subtotal": 75000,
+        "total_amount": 67500,
+        "created_at": "2025-11-05T07:30:00Z"
+    },
+    {
+        "order_id": "o-002",
+        "order_code": "SD-2025002",
+        "customer_id": "u-demo-1",
+        "order_status": "PROCESSING",
+        "subtotal": 120000,
+        "total_amount": 108000,
+        "created_at": "2025-11-05T08:15:00Z"
+    },
+    {
+        "order_id": "o-003",
+        "order_code": "SD-2025003",
+        "customer_id": null,
+        "order_status": "PENDING",
+        "subtotal": 45000,
+        "total_amount": 45000,
+        "created_at": "2025-11-05T08:45:00Z"
+    },
+    {
+        "order_id": "o-004",
+        "order_code": "SD-2025004",
+        "customer_id": "u-demo-1",
+        "order_status": "COMPLETED",
+        "subtotal": 90000,
+        "total_amount": 70000,
+        "created_at": "2025-11-04T16:20:00Z"
+    },
+    {
+        "order_id": "o-005",
+        "order_code": "SD-2025005",
+        "customer_id": null,
+        "order_status": "CANCELLED",
+        "subtotal": 55000,
+        "total_amount": 55000,
+        "created_at": "2025-11-04T14:10:00Z"
+    }
+]
