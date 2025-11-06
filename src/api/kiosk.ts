@@ -1,12 +1,24 @@
 import apiClient from './client';
 
+const IS_DEV = import.meta.env.DEV;
+
 export const kioskApi = {
-    recognizeFace: async (faceData: string): Promise<{ user_id: string; confidence: number }> => {
-        const response = await apiClient.post<{ user_id: string; confidence: number }>('/kiosk/face/recognize', { faceData });
-        return response.data;
+    // Backend chưa hỗ trợ: trả về mock ở DEV, còn lại ném lỗi mềm
+    recognizeFace: async (_faceData: string): Promise<{ user_id: string; confidence: number }> => {
+        if (IS_DEV) {
+            return Promise.resolve({ user_id: 'mock-user-id', confidence: 0.92 });
+        }
+        return Promise.reject(new Error('Face recognition not supported by backend'));
     },
 
-    logInteraction: async (kioskId: string, eventType: string, data?: unknown): Promise<void> => {
-        await apiClient.post('/kiosk/interactions', { kioskId, eventType, data });
+    // Không bắt buộc backend: ghi log no-op
+    logInteraction: async (_kioskId: string, _eventType: string, _data?: unknown): Promise<void> => {
+        if (IS_DEV) return Promise.resolve();
+        // Optional: route exists only if implemented later
+        try {
+            await apiClient.post('/kiosk/interactions', { _kioskId, _eventType, _data });
+        } catch {
+            // swallow
+        }
     },
 };

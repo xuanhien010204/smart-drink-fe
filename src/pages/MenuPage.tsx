@@ -11,17 +11,21 @@ export const MenuPage: React.FC = () => {
     const navigate = useNavigate();
     const { categories, products, selectedCategory, searchQuery, setCategories, setProducts, setSelectedCategory, setSearchQuery } = useCatalogStore();
     const [loading, setLoading] = useState(true);
+    const [page, setPage] = useState(1);
+    const [limit] = useState(12);
+    const [totalPages, setTotalPages] = useState<number | undefined>(undefined);
 
     useEffect(() => {
         const loadData = async () => {
             try {
                 setLoading(true);
-                const [productsData, categoriesData] = await Promise.all([
-                    catalogApi.getProducts(),
-                    catalogApi.getCategories(),
+                const [productsPage, categoriesPage] = await Promise.all([
+                    catalogApi.getProductsPage({ page, limit, category: selectedCategory || undefined, q: searchQuery || undefined }),
+                    catalogApi.getCategoriesPage({ page: 1, limit: 100 }),
                 ]);
-                setProducts(productsData);
-                setCategories(categoriesData);
+                setProducts(productsPage.items ?? []);
+                setCategories(categoriesPage.items ?? []);
+                setTotalPages(productsPage.meta?.totalPages);
             } catch (error) {
                 console.error('Error loading menu data:', error);
             } finally {
@@ -29,7 +33,7 @@ export const MenuPage: React.FC = () => {
             }
         };
         loadData();
-    }, [setCategories, setProducts]);
+    }, [setCategories, setProducts, page, limit, selectedCategory, searchQuery]);
 
     const filteredProducts = products.filter((p: Product) => {
         const matchesCategory = !selectedCategory || p.category_id === selectedCategory;
@@ -96,7 +100,7 @@ export const MenuPage: React.FC = () => {
                         <p className="text-2xl text-gray-600 font-semibold">Loading delicious drinks...</p>
                     </div>
                 ) : (
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl-grid-cols-4 gap-8">
                         {filteredProducts.map((product) => (
                             <ProductCard
                                 key={product.product_id}
@@ -120,6 +124,27 @@ export const MenuPage: React.FC = () => {
                             className="bg-blue-600 text-white px-8 py-3 rounded-full font-bold hover:bg-blue-700 transition-colors"
                         >
                             Show All Drinks
+                        </button>
+                    </div>
+                )}
+
+                {/* Pagination Controls */}
+                {!loading && filteredProducts.length > 0 && (
+                    <div className="flex justify-center items-center gap-4 mt-10">
+                        <button
+                            disabled={page <= 1}
+                            onClick={() => setPage((p) => Math.max(1, p - 1))}
+                            className="px-4 py-2 rounded bg-gray-200 disabled:opacity-50"
+                        >
+                            ← Prev
+                        </button>
+                        <span className="text-gray-700">Page {page}{totalPages ? ` / ${totalPages}` : ''}</span>
+                        <button
+                            disabled={totalPages ? page >= totalPages : false}
+                            onClick={() => setPage((p) => p + 1)}
+                            className="px-4 py-2 rounded bg-gray-200 disabled:opacity-50"
+                        >
+                            Next →
                         </button>
                     </div>
                 )}

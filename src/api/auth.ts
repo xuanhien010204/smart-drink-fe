@@ -14,12 +14,12 @@ export interface LoginResponse {
 
 export const authApi = {
     login: async (data: LoginRequest): Promise<LoginResponse> => {
-        const response = await apiClient.post<LoginResponse>('/api/auth/login', data);
+        const response = await apiClient.post<LoginResponse>('/auth/login', data);
         return response.data;
     },
 
     refresh: async (refreshToken: string): Promise<{ accessToken: string }> => {
-        const response = await apiClient.post<{ accessToken: string }>('/api/auth/refresh', { refreshToken });
+        const response = await apiClient.post<{ accessToken: string }>('/auth/refresh', { refreshToken });
         return response.data;
     },
 };

@@ -5,22 +5,22 @@ import { ordersApi } from '@/api/orders';
 import type { Order } from '@/types';
 
 export const OrderStatus: React.FC = () => {
-    const { code } = useParams<{ code: string }>();
+    const { id } = useParams<{ id: string }>();
     const navigate = useNavigate();
     const [order, setOrder] = useState<Order | null>(null);
 
     useEffect(() => {
         const loadOrder = async () => {
-            if (!code) return;
+            if (!id) return;
             try {
-                const data = await ordersApi.getOrderByCode(code);
+                const data = await ordersApi.getOrder(id);
                 setOrder(data);
             } catch (error) {
                 console.error('Error loading order:', error);
             }
         };
         loadOrder();
-    }, [code]);
+    }, [id]);
 
     if (!order) {
         return (
@@ -35,7 +35,8 @@ export const OrderStatus: React.FC = () => {
 
     const statusColors: Record<string, string> = {
         PENDING: 'text-yellow-600 bg-yellow-100',
-        PROCESSING: 'text-blue-600 bg-blue-100',
+        CONFIRMED: 'text-blue-600 bg-blue-100',
+        PREPARING: 'text-blue-600 bg-blue-100',
         COMPLETED: 'text-green-600 bg-green-100',
         CANCELLED: 'text-red-600 bg-red-100',
     };

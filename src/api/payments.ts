@@ -1,14 +1,14 @@
 import apiClient from './client';
-import type { PaymentQR, PaymentStatus } from '@/types';
+import type { Payment } from '@/types';
 
 export const paymentsApi = {
-    generateQR: async (orderId: string, amount: number): Promise<PaymentQR> => {
-        const response = await apiClient.post<PaymentQR>('/payments/qr', { orderId, amount });
+    createPayment: async (data: Partial<Payment>): Promise<Payment> => {
+        const response = await apiClient.post<Payment>('/payments', data);
         return response.data;
     },
 
-    getPaymentStatus: async (transactionId: string): Promise<PaymentStatus> => {
-        const response = await apiClient.get<PaymentStatus>(`/payments/${transactionId}/status`);
+    getPayment: async (id: string): Promise<Payment> => {
+        const response = await apiClient.get<Payment>(`/payments/${id}`);
         return response.data;
     },
 };

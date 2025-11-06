@@ -17,22 +17,7 @@ export const CheckoutPage: React.FC = () => {
     const total = getTotal();
 
     const handleApplyPromo = async () => {
-        setPromoError('');
-        try {
-            const result = await promotionsApi.validatePromotion({
-                code: promoCode,
-                cartAmount: subtotal,
-            });
-            if (result.valid && result.promotion) {
-                applyPromo(result.promotion);
-                setPromoCode('');
-            } else {
-                setPromoError('Invalid promo code');
-            }
-        } catch (error) {
-            console.error('Error applying promo:', error);
-            setPromoError('Error applying promo code');
-        }
+        setPromoError('Promo validation not available');
     };
 
     const handlePlaceOrder = async () => {
@@ -47,7 +32,7 @@ export const CheckoutPage: React.FC = () => {
                 promotion_code: promo?.code,
             });
             clearCart();
-            navigate(`/order/${order.order_code}`);
+            navigate(`/order/${order.order_id}`);
         } catch (error) {
             console.error('Error placing order:', error);
             alert('Error placing order. Please try again.');

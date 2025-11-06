@@ -1,25 +1,27 @@
 import axios from 'axios';
 import { mockApiInterceptor } from '@/utils/mockApi';
 
+const baseURL = (import.meta as any).env?.VITE_API_BASE_URL || 'http://localhost:5173';
+
 const apiClient = axios.create({
-    baseURL: 'http://localhost:4000',
+    baseURL,
     headers: {
         'Content-Type': 'application/json',
     },
 });
 
-// Use mock API in development
-const USE_MOCK_API = import.meta.env.DEV;
+// Use mock API via ENV (default: DEV)
+// const USE_MOCK_API = (import.meta as any).env?.VITE_USE_MOCK === 'true' || import.meta.env.DEV;
 
-if (USE_MOCK_API) {
-    apiClient.interceptors.request.use(
-        (config) => {
-            // Intercept and return mock data
-            return mockApiInterceptor(config) as unknown as Promise<typeof config>;
-        },
-        (error) => Promise.reject(error)
-    );
-}
+// if (USE_MOCK_API) {
+//     apiClient.interceptors.request.use(
+//         (config) => {
+//             // Intercept and return mock data
+//             return mockApiInterceptor(config) as unknown as Promise<typeof config>;
+//         },
+//         (error) => Promise.reject(error)
+//     );
+// }
 
 // Request interceptor for adding auth token
 apiClient.interceptors.request.use(
@@ -31,32 +33,18 @@ apiClient.interceptors.request.use(
         return config;
     },
     (error) => Promise.reject(error)
-);// Response interceptor for handling token refresh
+);
+// Response interceptor: on 401, clear tokens and redirect (no refresh flow on BE)
 apiClient.interceptors.response.use(
     (response) => response,
     async (error) => {
-        const originalRequest = error.config;
-
-        if (error.response?.status === 401 && !originalRequest._retry) {
-            originalRequest._retry = true;
-
-            try {
-                const refreshToken = localStorage.getItem('refreshToken');
-                const response = await axios.post('http://localhost:4000/api/auth/refresh', { refreshToken });
-                const { accessToken } = response.data;
-
-                localStorage.setItem('accessToken', accessToken);
-                originalRequest.headers.Authorization = `Bearer ${accessToken}`;
-
-                return apiClient(originalRequest);
-            } catch (refreshError) {
-                localStorage.removeItem('accessToken');
-                localStorage.removeItem('refreshToken');
+        if (error?.response?.status === 401) {
+            localStorage.removeItem('accessToken');
+            localStorage.removeItem('refreshToken');
+            if (typeof window !== 'undefined') {
                 window.location.href = '/admin/login';
-                return Promise.reject(refreshError);
             }
         }
-
         return Promise.reject(error);
     }
 );

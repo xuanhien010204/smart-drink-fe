@@ -21,13 +21,4 @@ export const ordersApi = {
         const response = await apiClient.get<Order>(`/orders/${orderId}`);
         return response.data;
     },
-
-    getOrderByCode: async (orderCode: string): Promise<Order> => {
-        const response = await apiClient.get<Order>(`/orders/code/${orderCode}`);
-        return response.data;
-    },
-
-    payOrder: async (orderId: string, paymentMethod: string): Promise<void> => {
-        await apiClient.post(`/orders/${orderId}/pay`, { paymentMethod });
-    },
 };
